@@ -30,8 +30,8 @@ except:
     raise
 
 try:
-    import proto.nanopb_pb2 as nanopb_pb2
-    import proto.plugin_pb2 as plugin_pb2
+    from generator.proto import nanopb_pb2
+    from generator.proto import plugin_pb2
 except TypeError:
     sys.stderr.write('''
          ****************************************************************************
@@ -1631,7 +1631,7 @@ def main_plugin():
     import shlex
     args = shlex.split(params)
     options, dummy = optparser.parse_args(args)
-
+    options.libformat = '#include "%s"\n'
     Globals.verbose_options = options.verbose
 
     response = plugin_pb2.CodeGeneratorResponse()
@@ -1665,7 +1665,7 @@ def main_plugin():
 
 if __name__ == '__main__':
     # Check if we are running as a plugin under protoc
-    if 'protoc-gen-' in sys.argv[0] or '--protoc-plugin' in sys.argv:
-        main_plugin()
-    else:
-        main_cli()
+    #if 'protoc-gen-' in sys.argv[0] or '--protoc-plugin' in sys.argv:
+    main_plugin()
+    #else:
+    #    main_cli()
