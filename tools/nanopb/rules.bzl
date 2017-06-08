@@ -33,7 +33,7 @@ def cc_nanopb_library(
       deps=[s + "_genproto" for s in deps],
       includes=includes,
       protoc=protoc,
-      plugin="//generator:nanopb_plugin",
+      plugin=str(Label("//generator:nanopb_plugin")),
       plugin_language="nanopb",
       outs=outs,
       visibility=["//visibility:public"],
