@@ -1631,7 +1631,7 @@ def main_plugin():
     import shlex
     args = shlex.split(params)
     options, dummy = optparser.parse_args(args)
-    options.libformat = '#include "%s"\n'
+
     Globals.verbose_options = options.verbose
 
     response = plugin_pb2.CodeGeneratorResponse()
