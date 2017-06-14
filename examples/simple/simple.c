@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "pb_encode.h"
-#include "pb_decode.h"
+#include <pb_encode.h>
+#include <pb_decode.h>
 #include "examples/simple/simple.pb.h"
 
 int main()
