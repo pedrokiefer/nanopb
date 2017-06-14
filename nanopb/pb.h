@@ -22,7 +22,7 @@
 /* #define PB_MAX_REQUIRED_FIELDS 256 */
 
 /* Add support for tag numbers > 255 and fields larger than 255 bytes. */
-/* #define PB_FIELD_16BIT 1 */
+#define PB_FIELD_16BIT 1
 
 /* Add support for tag numbers > 65536 and fields larger than 65536 bytes. */
 /* #define PB_FIELD_32BIT 1 */
@@ -31,7 +31,7 @@
 /* #define PB_NO_ERRMSG 1 */
 
 /* Disable support for custom streams (support only memory buffers). */
-/* #define PB_BUFFER_ONLY 1 */
+#define PB_BUFFER_ONLY 1
 
 /* Switch back to the old-style callback function signature.
  * This was the default until nanopb-0.2.1. */
