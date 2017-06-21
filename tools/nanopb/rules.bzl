@@ -5,11 +5,11 @@ def _GetPath(ctx, path):
     return path
 
 def _CcHdrs(srcs, use_grpc_plugin=False):
-  ret = [s[:-len(".proto")] + ".pb.h" for s in srcs]
+  ret = [s[:-len(".proto")] + ".nanopb.h" for s in srcs]
   return ret
 
 def _CcSrcs(srcs, use_grpc_plugin=False):
-  ret = [s[:-len(".proto")] + ".pb.c" for s in srcs]
+  ret = [s[:-len(".proto")] + ".nanopb.c" for s in srcs]
   return ret
 
 def _GenDir(ctx):
@@ -43,7 +43,7 @@ def _proto_gen_impl(ctx):
     import_flags += dep.proto.import_flags
     deps += dep.proto.deps
 
-  args = []
+  args = ['-e', '.nanopb']
 
   inputs = srcs + deps + options
   if ctx.executable.plugin:
