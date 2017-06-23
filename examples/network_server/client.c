@@ -20,7 +20,7 @@
 #include <pb_encode.h>
 #include <pb_decode.h>
 
-#include "examples/network_server/fileproto.pb.h"
+#include "examples/network_server/fileproto.nanopb.h"
 #include "examples/network_server/common.h"
 
 /* This callback function will be called once for each filename received

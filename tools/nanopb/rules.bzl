@@ -43,7 +43,7 @@ def _proto_gen_impl(ctx):
     import_flags += dep.proto.import_flags
     deps += dep.proto.deps
 
-  args = ['-e', '.nanopb']
+  args = []
 
   inputs = srcs + deps + options
   if ctx.executable.plugin:
