@@ -16,6 +16,7 @@ py_proto_library(
     protoc = "@com_google_protobuf//:protoc",
     default_runtime = "@com_google_protobuf//:protobuf_python",
     visibility = ["//visibility:public"],
+    srcs_version = "PY2AND3",
 )
 
 py_proto_library(
@@ -25,4 +26,5 @@ py_proto_library(
     protoc = "@com_google_protobuf//:protoc",
     default_runtime = "@com_google_protobuf//:protobuf_python",
     visibility = ["//visibility:public"],
+    srcs_version = "PY2AND3",
 )

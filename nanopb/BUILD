@@ -19,7 +19,8 @@ py_proto_library(
     deps = ["@com_google_protobuf//:protobuf_python"],
     protoc = "@com_google_protobuf//:protoc",
     default_runtime = "@com_google_protobuf//:protobuf_python",
-    visibility = ["//visibility:public"]
+    visibility = ["//visibility:public"],
+    srcs_version = "PY2AND3",
 )
 
 cc_library(
